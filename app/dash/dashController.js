@@ -51,8 +51,8 @@ app.controller('DashCtrl', ['$scope','authService', 'contractService', 'helperSe
         contractService.getContracts().then(function (results) {
 
             $scope.contracts = results.data;
-            $scope.$apply()
-            
+           // $scope.$apply()
+            console.log(results.data)
             $scope.contracts.forEach(function (con) {
                 contractService.getTransactions(con.recordId).then(function (result) {
                     con.transactions = result.data;

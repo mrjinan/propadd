@@ -10,13 +10,13 @@
 	</head>
 	<body class="landing" data-ng-app="DemoApp">
 		<div id="page-wrapper">
-
 			<!-- Header -->
-				<header id="header">
-					<h1><a href="index.html">Your Properties</a></h1>
+				<header id="header" data-ng-controller="indexController">
+					<h1><a href="index.html">Brand Name</a></h1>
 					<nav id="nav">
 						<ul>
 							<li><a href="#/home">Home</a></li>
+							<li><a data-ng-show="authentication.isAuth" href="#/home">Logout</a></li>
 							
 							<li data-ng-show="!authentication.isAuth"><a href="#" class="button">Sign Up</a></li>
 						</ul>
@@ -27,7 +27,7 @@
 
 
 
-				<section data-ng-view="">
+				<section  data-ng-view="">
 				</section>
 			<!-- Banner -->
 				

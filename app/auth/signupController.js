@@ -5,21 +5,51 @@ app.controller('SignupCtrl', ['$scope', '$location', 'authService', 'ngAuthSetti
         userName: "",
         password: "",
         confirmPassword: "",
-        useRefreshTokens: false
+        useRefreshTokens: false,
+
     };
+    $scope.isValid = function(model){
+        if(model)
+            return model.trim() != ""
+        return model
+    }
+    $scope.isDisabled=function(){
+          
+            return !($scope.isValid($scope.loginData.firstName) &&
+                $scope.isValid($scope.loginData.lastName) &&
+                $scope.isValid($scope.loginData.userName) &&
+               $scope.isValid($scope.loginData.password) &&
+                $scope.isValid($scope.loginData.confirmPassword) &&
+                $scope.isValid($scope.loginData.phone) &&
+                $scope.isValid($scope.loginData.address) &&
+                $scope.isValid($scope.loginData.county) &&
+                $scope.isValid($scope.loginData.pinCode) &&
+                $scope.isValid($scope.loginData.country) &&
+
+                ($scope.loginData.confirmPassword == $scope.loginData.password) &&
+                $scope.loginData.Agree
+            )
+        }
 
     $scope.message = "";
 
     $scope.login = function () {
+        //TODO - The service not accepting the new parameters. this needs to be checked with Chris
+        var loginInfo = {
+            userName: $scope.loginData.userName,
+            password:$scope.loginData.password,
+            confirmPassword:$scope.loginData.confirmPassword,
+            useRefreshTokens: false,
+        };
 
-        authService.saveRegistration($scope.loginData).then(function (response) {
+        authService.saveRegistration(loginInfo).then(function (response) {
 
             authService.authentication.isAuth = true;
             authService.authentication.userName = response.config.data.userName;
             
 
-            authService.login($scope.loginData).then(function (response) {
-
+            authService.login(loginInfo).then(function (response) {
+                console.log(response)
                 $location.path('/dash');
 
             },

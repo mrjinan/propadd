@@ -3,53 +3,66 @@
         <h2>Sign Up</h2>
     </header>
     <div class="box">
-        <form method="post" action="#">
+        <form name="loginForm">
             <div class="row uniform 50%">
                 <div class="6u 12u(mobilep)">
-                    <input type="text" name="name" placeholder="First Name" />
+                    <input type="text" data-ng-model="loginData.firstName" placeholder="First Name" required/>
                 </div>
                 <div class="6u 12u(mobilep)">
-                    <input type="text" name="lname" placeholder="Last Name" />
+                    <input type="text" data-ng-model="loginData.lastName" placeholder="Last Name" required/>
                 </div>
             </div>
             <div class="row uniform 50%">
                 <div class="12u">
-                    <input type="email" name="email" id="email" value="" placeholder="Email" />
+                    <input type="email"  data-ng-model="loginData.userName"  placeholder="Email" required/>
                     
                 </div>
             </div>
+
+             <div class="row uniform 50%">
+                <div class="6u 12u(mobilep)">
+                    <input type="password" data-ng-model="loginData.password" placeholder="Password" required/>
+                </div>
+                <div class="6u 12u(mobilep)">
+                    <input type="password" data-ng-model="loginData.confirmPassword" placeholder="Confirm Password" required/>
+                </div>
+            </div>
+
              <div class="row uniform 50%">
                 <div class="12u">
-                    <input type="text" name="lname" placeholder="Phone Number" />
+                    <input type="text" data-ng-model="loginData.phone"  placeholder="Phone Number" required/>
                 </div>
             </div>
             <div class="row uniform 50%">
                 <div class="12u">
-                    <textarea name="message" id="message" placeholder="Street Address" rows="3"></textarea>
+                    <textarea placeholder="Street Address" data-ng-model="loginData.address"  rows="3"></textarea>
                 </div>
             </div>
             <div class="row uniform 50%">
                 <div class="12u">
-                    <input type="text" name="lname" placeholder="Suburb/Country" />
+                    <input type="text" data-ng-model="loginData.county"  placeholder="Suburb/County" />
                 </div>
             </div>
             <div class="row uniform 50%">
                 <div class="6u 12u(mobilep)">
-                    <input type="text" name="name" placeholder="Post Code" />
+                    <input type="text" data-ng-model="loginData.pinCode"  placeholder="Post Code" />
                 </div>
                 <div class="6u 12u(mobilep)">
-                    <input type="text" name="lname" placeholder="Country" />
+                    <input type="text" data-ng-model="loginData.country"   placeholder="Country" />
                 </div>
             </div>
             <div class="row uniform 50%">
                 <div class="12u">
-                    <input type="checkbox" name="vehicle" value="Bike">I Agree<br>
+
+                    <input id="chkAgree" type="checkbox" ng-model="loginData.Agree" value="Agree">
+                <label for="chkAgree">Email me a copy of this message</label>
+
                 </div>
             </div>
             <div class="row uniform">
                 <div class="12u">
                     <ul class="actions align-center">
-                        <li><input type="submit" value="Signup" /></li>
+                        <li><input type="submit" data-ng-disabled="isDisabled()" data-ng-click="login()" value="Signup" /></li>
                     </ul>
                 </div>
             </div>
