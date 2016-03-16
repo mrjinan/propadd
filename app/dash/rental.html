@@ -1,0 +1,40 @@
+﻿
+<div class="rentalsView">
+    <div class="row rentalBoxRow">
+        <div class="col-md-9">
+            <h4><b>Property:</b> {{contract.property.address.addressFirstLine}}</h4>
+            <div class="formContractView"><b>Start Date:</b> {{contract.startDate}}</div>
+            <div class="formContractView"><b>End Date:</b> {{contract.endDate}}</div>
+            <div class="formContractView"><b>Rent:</b> ${{contract.schedules[0].scheduledAmount}}</div>
+            <HR> 
+            <h4><b>Update Record Demo:</b></h4>
+            <div class="formContractView">Enter a new address to perform an update:</div>
+            <input type="text" class="form-control" placeholder="Address" data-ng-model="contract.property.address.addressFirstLine" autofocus>
+            <button class="btn btn-info" type="submit" data-ng-click="updateContract(contract)">Update</button>
+            <button class="btn btn-info" type="submit" data-ng-click="addContract(contract)">Duplicate</button>
+            <button class="btn btn-info" type="submit" data-ng-click="deleteContract(contract)">Delete</button>
+            <HR> 
+            <h4><b>Invite Demo:</b></h4>
+            Send an invite to other tenants or the property ownder to join this website:
+                
+                <input type="text" class="" placeholder="Invite email address" data-ng-model="emailInvite" autofocus>
+            <button class="btn btn-info" type="submit" data-ng-click="inviteContract(contract,emailInvite)">Invite</button>
+
+                <HR>
+
+            <h4><b>Record Rental Payments:</b></h4>
+                <input type="text" class="" placeholder="Amount" data-ng-model="paymentAmount" autofocus>
+                <button class="btn btn-info" type="submit" data-ng-click="addPayment(contract.recordId,paymentAmount )">Record</button>
+                <h4 ng-if="contract.transactions"><b>History of Payments:</b></h4>
+                <table>
+                    <tr ng-repeat="x in contract.transactions">
+                        <td> ID: {{ x.recordId }} </td>
+                        <td> Date: {{ x.paid }} </td>
+                        <td> Amount: ${{ x.totalAmount }} </td>
+                    </tr>
+                </table>
+
+
+</div>
+    </div>
+</div>

@@ -1,0 +1,69 @@
+﻿<!--<form role="form">
+    <div class="row form-login">
+        <div class="col-md-4 form-login">
+            <h2 class="form-login-heading">Login</h2>
+            <input type="text" class="form-control" placeholder="Email Address" data-ng-model="loginData.userName" required autofocus>
+            <input type="password" class="form-control" placeholder="Password" data-ng-model="loginData.password" required>
+            <button class="btn btn-md btn-info btn-block" type="submit" data-ng-click="login()">Login</button>
+              <div data-ng-hide="message == ''" class="alert alert-danger">
+                {{message}}
+            </div>
+        </div>
+    </div>
+    <div class="row form-login">
+        <div class="col-md-4 form-login">
+            <p class="form-login-heading">Or forget tring to remember more than one password and login using:</p>
+            <button class="btn btn-large btn-facebook btn-block" type="button" data-ng-click="authExternalProvider('Facebook')"><i class="fa fa-facebook"></i> | Connect with Facebook</button>
+            <button class="btn btn-large btn-google-plus btn-block" type="button" data-ng-click="authExternalProvider('Google')"><i class="fa fa-google-plus"></i> | Connect with Google+</button>
+        </div>
+        <div class="col-md-2">
+            &nbsp;
+        </div>
+    </div>
+</form>
+-->
+<section id="main" class="container 75%">
+    <header>
+        <h2>Login</h2>
+    </header>
+    <div class="box">
+        <form method="post" action="#">
+            <div class="row uniform 50%">
+                <div class="12u">
+                    <input type="text" class="form-control" placeholder="Email Address" data-ng-model="loginData.userName" required autofocus>
+                </div>
+                
+            </div>
+            <div class="row uniform 50%">
+                <div class="12u">
+                    
+            <input type="password" class="form-control" placeholder="Password" data-ng-model="loginData.password" required>
+                    
+                </div>
+            </div>
+            <div class="row uniform">
+                <div class="12u">
+                    <ul class="actions align-center">
+                        <li><input type="submit" value="Sign In" /></li>
+                    </ul>
+                </div>
+            </div>
+        </form>
+    </div>
+    <header>
+        <h2>Or Connect Using</h2>
+    </header>
+    <div class="box">
+         <section class="box special features">
+            <div class="features-row">
+                <section>
+                    <span class="icon major fa-facebook-official facebook"></span>
+                </section>
+                <section>
+                    <span class="icon major fa-google-plus google"></span>
+                </section>
+
+            </div>
+        </section>
+    </div>
+</section>
