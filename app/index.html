@@ -8,7 +8,7 @@
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
 	</head>
-	<body class="landing" data-ng-app="DemoApp">
+	<body  data-ng-app="DemoApp">
 		<div id="page-wrapper">
 			<!-- Header -->
 				<header id="header" data-ng-controller="indexController">
@@ -18,23 +18,15 @@
 							<li><a href="#/home">Home</a></li>
 							<li><a data-ng-show="authentication.isAuth" href="#/home">Logout</a></li>
 							
-							<li data-ng-show="!authentication.isAuth"><a href="#" class="button">Sign Up</a></li>
+							<li data-ng-show="!authentication.isAuth"><a href="#/signup" class="button">Sign Up</a></li>
 						</ul>
 					</nav>
 				</header>
 
-
-
-
-
 				<section  data-ng-view="">
 				</section>
-			<!-- Banner -->
-				
-
-			<!-- Footer -->
+			
 				<footer id="footer">
-					
 					<ul class="copyright">
 						<li>&copy; Footer message</li>
 					</ul>
@@ -43,38 +35,38 @@
 		</div>
 
 		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.dropotron.min.js"></script>
-			<script src="assets/js/jquery.scrollgress.min.js"></script>
-			<script src="assets/js/skel.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
-			<script src="assets/js/main.js"></script>
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/jquery.dropotron.min.js"></script>
+		<script src="assets/js/jquery.scrollgress.min.js"></script>
+		<script src="assets/js/skel.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+		<script src="assets/js/main.js"></script>
 
-			<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script>
-		    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular-route.min.js"></script>
-		    <script src="scripts/angular-local-storage.min.js"></script>
-		    <script src="scripts/loading-bar.min.js"></script>
-		    <script src="scripts/moment.min.js"></script>
+		<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script>
+	    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular-route.min.js"></script>
+	    <script src="scripts/angular-local-storage.min.js"></script>
+	    <script src="scripts/loading-bar.min.js"></script>
+	    <script src="scripts/moment.min.js"></script>
 
-		    <!-- Load app main script -->
-		    <script src="app.js?v=2"></script>
+	    <!-- Load app main script -->
+	    <script src="app.js?v=2"></script>
 
-		    <!-- Load Views -->
-		    <script src="home/homeController.js?v=2"></script>
-		    <script src="auth/loginController.js?v=2"></script>
-		    <script src="auth/signupController.js?v=2"></script>
-		    <script src="dash/dashController.js?v=2"></script>
+	    <!-- Load Views -->
+	    <script src="home/homeController.js?v=2"></script>
+	    <script src="auth/loginController.js?v=2"></script>
+	    <script src="auth/signupController.js?v=2"></script>
+	    <script src="dash/dashController.js?v=2"></script>
 
-		    <!-- Load services -->
-		    <script src="services/authInterceptorService.js?v=2"></script>
-		    <script src="services/authService.js?v=2"></script>
-		    <script src="services/clientService.js?v=2"></script>
-		    <script src="services/contractService.js?v=2"></script>
-		    <script src="services/tokensManagerService.js?v=2"></script>
-		    <script src="services/helperService.js?v=2"></script>
-		    <!-- Load controllers -->
-		    <script src="indexController.js?v=2"></script>
+	    <!-- Load services -->
+	    <script src="services/authInterceptorService.js?v=2"></script>
+	    <script src="services/authService.js?v=2"></script>
+	    <script src="services/clientService.js?v=2"></script>
+	    <script src="services/contractService.js?v=2"></script>
+	    <script src="services/tokensManagerService.js?v=2"></script>
+	    <script src="services/helperService.js?v=2"></script>
+	    <!-- Load controllers -->
+	    <script src="indexController.js?v=2"></script>
 
 
 	</body>

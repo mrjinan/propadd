@@ -23,3 +23,65 @@
             </div>
     </div>
 </div>-->
+
+<section id="dash" class="container">
+    <header>
+        <h2>Your Dashboard</h2>
+    </header>
+    <div class="row">
+        <div class="6u 12u(narrower)" data-ng-repeat="contract in contracts">
+            <section class="box special">
+                <div data-ng-show="contract.showTransaction">
+                    <span class="image featured"></span>
+                    <h3>Transactions</h3>
+                    <p>
+                        
+                        <table class="alt">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Date</th>
+                                    <th>Amount</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr data-ng-repeat="transaction in contract.transactions">
+                                    <td>{{x.recordId}}</td>
+                                    <td>{{x.paid}}</td>
+                                    <td>{{x.totalAmount}}</td>
+
+                                </tr>
+                            </tbody>
+                        </table>
+
+                       
+                    </p>
+                    <ul class="actions">
+                        <li><a data-ng-click="toggleShowTransaction(contract)" class="button alt">Details</a></li>
+                    </ul>
+                </div>
+
+                <div data-ng-hide="contract.showTransaction">
+                    <span class="image featured"><img src="images/pic02.jpg" alt=""></span>
+                    <h3>{{contract.property.address.addressFirstLine}}</h3>
+                    <p>
+                        
+                        <ul class="alt">
+                            <li><span>Start Date: <strong>{{contract.startDate | date:'MM/dd/yyyy' }}</strong></span></li>
+                            <li><span>End Date: <strong>{{contract.endDate | date:'MM/dd/yyyy' }}</strong></span></li>
+                            <li><span>Rent: <strong>{{contract.schedules[0].scheduledAmount |  currency:"$" }}</strong></span></li>
+                        </ul>
+
+                       
+                    </p>
+                    <ul class="actions">
+                        <li><a data-ng-click="toggleShowTransaction(contract)" class="button alt">Transactions</a></li>
+                    </ul>
+                </div>
+                
+                
+            </section>
+        </div>
+    </div>
+</section>
+

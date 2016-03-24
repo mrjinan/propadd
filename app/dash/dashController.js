@@ -45,6 +45,9 @@ app.controller('DashCtrl', ['$scope','authService', 'contractService', 'helperSe
     };
 
     //$scope.emailInvite = '';
+    $scope.toggleShowTransaction = function(contract){
+        contract.showTransaction = !contract.showTransaction ;
+    }
 
     $scope.populateForm = function () {
 
