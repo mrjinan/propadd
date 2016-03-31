@@ -27,9 +27,13 @@
 <section id="dash" class="container">
     <header>
         <h2>Your Dashboard</h2>
+        
     </header>
     <div class="row">
-        <div class="6u 12u(narrower)" data-ng-repeat="contract in contracts">
+        <a style="float:right" class="button special small">New Property</a>
+    </div>
+    <div class="row">
+        <div class="12u 12u(narrower)" data-ng-repeat="contract in contracts">
             <section class="box special">
                 <div data-ng-show="contract.showTransaction">
                     <span class="image featured"></span>
@@ -57,7 +61,9 @@
                        
                     </p>
                     <ul class="actions">
-                        <li><a data-ng-click="toggleShowTransaction(contract)" class="button alt">Details</a></li>
+                        <li><a data-ng-click="toggleShowTransaction(contract)" class="button alt">Back to Details</a></li>
+                        <li><a  class="button special">Add Transaction</a></li>
+
                     </ul>
                 </div>
 
